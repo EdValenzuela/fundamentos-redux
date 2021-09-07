@@ -1,8 +1,8 @@
-import { createStore } from 'redux'
+import { createStore } from "redux";
 
 // Nombres de constantes de acciones
-const INCREMENT = 'INCREMENT';
-const DECREMENT = 'DECREMENT';
+const INCREMENT = "INCREMENT";
+const DECREMENT = "DECREMENT";
 
 // Reducer
 /* es una funcion pura que nos regresa el estado actual */
@@ -14,57 +14,60 @@ const DECREMENT = 'DECREMENT';
 
 const initialState = 0;
 
-
 const counter = (state = initialState, action) => {
-    switch (action.type) {
-        case INCREMENT:
-            return state + 1;
+  switch (action.type) {
+    case INCREMENT:
+      return state + 1;
 
-        case DECREMENT:
-            return state - 1;
-    
-        default:
-            return state;
-    }
-}
+    case DECREMENT:
+      return state - 1;
 
-// Store
-// Almacenamiento de nuestro estado
-const store = createStore(counter)
+    default:
+      return state;
+  }
+};
 
-store.subscribe(() => {
-    console.log(store.getState())
-})
+/* store.subscribe(() => {
+  console.log(store.getState());
+}); */
 
 //creadores de acciones
-const increment = () => {
-    return {
-        type: INCREMENT
-    }
-}
+export const increment = () => {
+  return {
+    type: INCREMENT,
+  };
+};
 
-const decrement = () => {
-    return {
-        type: DECREMENT
-    }
-}
+export const decrement = () => {
+  return {
+    type: DECREMENT,
+  };
+};
 
 //acciones
 // store.dispatch({
 //     type: INCREMENT
 // })
 
-store.dispatch(increment())
-store.dispatch(increment())
-store.dispatch(increment())
-store.dispatch(increment())
-store.dispatch(increment())
-store.dispatch(increment())
+/* store.dispatch(increment());
+store.dispatch(increment());
+store.dispatch(increment());
+store.dispatch(increment());
+store.dispatch(increment());
+store.dispatch(increment()); */
 
-setTimeout(() => {
-    store.dispatch({
-        type: DECREMENT
-    })
-}, 2000);
+/*setTimeout(() => {
+   store.dispatch({
+    type: DECREMENT,
+  });
+}, 2000); */
 
-export default store;
+//store.getState()
+//store.dispatch()
+//store.subscribe(func)
+
+// Store
+// Almacenamiento de nuestro estado
+const store = createStore(counter);
+
+export default store
