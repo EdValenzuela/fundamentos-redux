@@ -3,7 +3,7 @@ import { Provider } from 'react-redux'
 import Counter from './Components/Counter'
 import Info from './Components/Info'
 
-import store from './store'
+import store from './redux/store'
 
 const App = () => {
   return (

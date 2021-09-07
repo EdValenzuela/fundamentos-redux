@@ -1,6 +1,5 @@
 import { createStore } from "redux"
 import rootReducer from './reducers'
-import { INCREMENT, DECREMENT } from './reducers/counter'
 
 
 // Reducer
@@ -16,19 +15,6 @@ import { INCREMENT, DECREMENT } from './reducers/counter'
 /* store.subscribe(() => {
   console.log(store.getState());
 }); */
-
-//creadores de acciones
-export const increment = () => {
-  return {
-    type: INCREMENT,
-  };
-};
-
-export const decrement = () => {
-  return {
-    type: DECREMENT,
-  };
-};
 
 //acciones
 // store.dispatch({

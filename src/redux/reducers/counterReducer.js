@@ -1,8 +1,6 @@
-const initialState = 0;
+import { INCREMENT, DECREMENT } from "../actions/counterActions";
 
-// Nombres de constantes de acciones
-export const INCREMENT = "INCREMENT";
-export const DECREMENT = "DECREMENT";
+const initialState = 0;
 
 const counter = (state = initialState, action) => {
   switch (action.type) {
