@@ -4,21 +4,24 @@ import { increment, decrement } from '../store'
 
 const Counter = props => {
 
-    const { count, increment, decrement } = props;
+    const { counter, name, increment, decrement } = props;
 
     return (
         <div>
             <button onClick={ increment } >+</button>
             <button onClick={ decrement }>-</button>
 
-            <h1>{ count }</h1>
+            <h1>{ counter }</h1>
+            <p>{ name }</p>
         </div>
     )
 }
 
 const mapStateToProps = state => {
+    console.log(state)
     return{
-        count: state
+        name: state.user.name,
+        counter: state.counter
     }
 }
 
