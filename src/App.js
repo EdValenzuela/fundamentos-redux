@@ -9,8 +9,8 @@ const App = () => {
   return (
     <Provider store={store}>
       <div>
-        <Counter />
         <Info />
+        <Counter />
       </div>
     </Provider>
   )
