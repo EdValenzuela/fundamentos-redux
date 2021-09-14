@@ -1,6 +1,51 @@
-import { createStore } from "redux"
+import { createStore, applyMiddleware } from "redux"
+import logger from 'redux-logger'
+import { ADD_TODO, DELETE_TODO } from "./actions/todoActions";
 import rootReducer from './reducers'
 
+// midleware
+/* const logger = (store) => {
+  return (next) => {
+    return (action) => {
+
+    }
+  }
+} */
+
+/* const logger = (store) => (next) => (action) =>{
+  console.log('ha ocurrido una accion', action)
+  next(action);
+} */
+
+// midleware
+const confirmDeleteTodo = (store) => (next) => (action) =>{
+  /* setTimeout(() => {
+    next(action)
+  }, 1000);
+
+  if(action.type !== ADD_TODO){
+    setTimeout(() => {
+      store.dispatch({
+        type: ADD_TODO,
+        payload:{
+          text: 'todo creado en midleware',
+          checked: false,
+          id:' abcd'
+        }
+      })
+    }, 4000);
+  } */
+
+  if(action.type === DELETE_TODO){
+    let conf = window.confirm('seguro que quieres eliminar el todo?')
+    if(conf){
+      next(action);
+    }
+  }else{
+    next(action);
+  }
+
+}
 
 // Reducer
 /* es una funcion pura que nos regresa el estado actual */
@@ -40,6 +85,6 @@ store.dispatch(increment()); */
 
 // Store
 // Almacenamiento de nuestro estado
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(confirmDeleteTodo, logger));
 
 export default store
