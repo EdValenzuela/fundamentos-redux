@@ -11,3 +11,7 @@ npm i redux
 ```code
 npm i react-redux
 ```
+
+```code
+npm i redux-logger
+```
