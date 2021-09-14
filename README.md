@@ -7,3 +7,7 @@ npx create-react-app [nombre del proyecto]
 ```code
 npm i redux
 ```
+
+```code
+npm i react-redux
+```
