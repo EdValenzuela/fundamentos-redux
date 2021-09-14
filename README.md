@@ -1,17 +1,11 @@
 # Instalación de dependencias
 
 ```code
-npx create-react-app [nombre del proyecto] 
-```
+npx create-react-app [nombre del proyecto]
+npm start
 
-```code
 npm i redux
-```
-
-```code
 npm i react-redux
-```
-
-```code
 npm i redux-logger
+npm i redux-thunk
 ```

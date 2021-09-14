@@ -1,5 +1,6 @@
 import { createStore, applyMiddleware } from "redux"
 import logger from 'redux-logger'
+import thunk from 'redux-thunk'
 import { ADD_TODO, DELETE_TODO } from "./actions/todoActions";
 import rootReducer from './reducers'
 
@@ -85,6 +86,6 @@ store.dispatch(increment()); */
 
 // Store
 // Almacenamiento de nuestro estado
-const store = createStore(rootReducer, applyMiddleware(confirmDeleteTodo, logger));
+const store = createStore(rootReducer, applyMiddleware(confirmDeleteTodo, logger, thunk));
 
 export default store

@@ -15,3 +15,11 @@ export const increment = () => {
       type: DECREMENT,
     };
   };
+
+  export const incrementAsync = (delay) => (dispatch) => {
+    setTimeout(() => {
+        dispatch({
+            type: INCREMENT
+        })
+    }, delay);
+}
