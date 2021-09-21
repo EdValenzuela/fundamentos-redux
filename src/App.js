@@ -4,7 +4,8 @@ import { Provider } from 'react-redux'
 /* import Counter from './Components/Counter'
 import Info from './Components/Info' */
 /* import Todos from './Components/Todos/Todos' */
-import Controller from './Components/Controller'
+// import Controller from './Components/Controller'
+import Blog from './Components/Blog'
 
 import store from './redux/store'
 
@@ -16,7 +17,8 @@ const App = () => {
         <Counter /> */}
         {/* <Fruits /> */}
         {/* <Todos /> */}
-        <Controller />
+        {/* <Controller /> */}
+        <Blog />
       </div>
     </Provider>
   )

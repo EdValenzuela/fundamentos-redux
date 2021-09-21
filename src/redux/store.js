@@ -1,7 +1,7 @@
 import { createStore, applyMiddleware } from "redux"
 import logger from 'redux-logger'
 import thunk from 'redux-thunk'
-import { ADD_TODO, DELETE_TODO } from "./actions/todoActions";
+import { DELETE_TODO } from "./actions/todoActions";
 import rootReducer from './reducers'
 
 // midleware
